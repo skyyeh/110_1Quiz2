@@ -10,10 +10,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="tb_CTEL" runat="server" TextMode="Email"></asp:TextBox><br />
-            <asp:RegularExpressionValidator ID="rev_CTEL" runat="server" ErrorMessage="不合法" ForeColor="#CC0000" ControlToValidate="tb_CTEL" ValidationExpression="^d{4}-\d{2}-\d{2}$"></asp:RegularExpressionValidator>
-            <asp:Button ID="btn_Submit" runat="server" Text="送出" OnClick="btn_Submit_Click" /><br />
-            <asp:Label ID="lb_Msg" runat="server" Text=""></asp:Label>
+            請輸入日期<asp:TextBox ID="tb_CTEL" runat="server"></asp:TextBox>
+        <asp:RegularExpressionValidator ID="rev_CTEL" runat="server" ErrorMessage="不符合" ForeColor="Red" ControlToValidate="tb_CTEL" ValidationExpression="^\d{4}[- /]\d{2}[- /]\d{2}$">
+        </asp:RegularExpressionValidator><br />
+        
+        <asp:Button ID="btn_submit" runat="server" Text="送出" OnClick="btn_submit_Click"/><br />
+        <asp:Label ID="lb_Msg" runat="server" Text=""></asp:Label>
         </div>
     </form>
 </body>
